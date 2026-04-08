@@ -66,20 +66,20 @@ This repo is that system. Use it as-is, cherry-pick what you need, or fork it as
 
 ## Installation
 
-### Option 1: Copy to your Claude Code config
+### Step 1: Copy the files
 
 ```bash
 # Clone
 git clone https://github.com/stoffl6781/claude-skill.git
 
-# Copy skills
+# Copy skills to your Claude Code config
 cp -r claude-skill/skills/* ~/.claude/skills/
 
 # Copy rules
 cp -r claude-skill/rules/* ~/.claude/rules/
 ```
 
-### Option 2: Cherry-pick what you need
+Or cherry-pick what you need:
 
 ```bash
 # Just the workflow pipeline
@@ -91,6 +91,84 @@ cp -r claude-skill/skills/{laravel-security-audit,laravel-performance,laravel-a1
 # Just the rules
 cp -r claude-skill/rules/* ~/.claude/rules/
 ```
+
+### Step 2: Restart Claude Code
+
+Close and reopen Claude Code (or start a new conversation). Skills are loaded when a session starts.
+
+### Step 3: Verify
+
+In the Claude Code chat, type `/` – you should see your skills in the autocomplete list:
+
+```
+/help
+/requirements
+/architecture
+/frontend
+/backend
+/qa
+/deploy
+...
+```
+
+## How to use
+
+### Important: Skills are chat commands, not terminal commands
+
+Skills are **slash commands inside the Claude Code chat** – not terminal commands. You type them in the conversation with Claude, not in your shell.
+
+**In Claude Code chat:**
+```
+You: /help
+→ Claude loads the skill and shows your project status + next steps
+
+You: /requirements
+→ Claude walks you through writing a feature spec
+
+You: Can you check if this is secure?
+→ Claude recognizes the intent and loads /laravel-security-audit automatically
+```
+
+**This does NOT work:**
+```bash
+# These are NOT terminal commands
+$ /help          # ✗ Won't work in your terminal
+$ claude help    # ✗ Not a CLI command
+```
+
+### Three ways to trigger a skill
+
+1. **Directly** – Type the slash command in chat:
+   ```
+   You: /qa
+   ```
+
+2. **By asking** – Claude recognizes keywords from the skill description and loads it automatically:
+   ```
+   You: "Is this feature secure?"
+   → Claude loads /laravel-security-audit
+
+   You: "What should I do next?"
+   → Claude loads /help
+
+   You: "I need to add a new feature for user notifications"
+   → Claude loads /requirements
+   ```
+
+3. **In combination** – Use skills as part of a conversation:
+   ```
+   You: "I just finished the payment integration. /qa"
+   → Claude tests the payment feature against its acceptance criteria
+   ```
+
+### Rules work automatically
+
+Unlike skills, **rules don't need to be invoked**. They apply automatically based on which files Claude is working on:
+
+- Editing `app/Services/BillingService.php` → `backend.md` rules are active (strict types, DI, no raw SQL)
+- Editing `resources/views/billing/index.blade.php` → `frontend.md` rules are active (Tailwind, a11y, responsive)
+- Editing `.env.example` → `security.md` rules are active (no secrets, document all vars)
+- `general.md` is **always** active (code quality, naming, git conventions)
 
 ## Recommended Development Workflow
 
