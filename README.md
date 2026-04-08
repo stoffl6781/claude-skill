@@ -19,41 +19,42 @@ This repo is that system. Use it as-is, cherry-pick what you need, or fork it as
 
 ### Workflow Skills (development lifecycle)
 
-| Skill | Command | Purpose |
+| Skill | Trigger in chat | Purpose |
 |---|---|---|
-| **Requirements** | `/requirements` | Write feature specs with User Stories, Acceptance Criteria, Edge Cases |
-| **Architecture** | `/architecture` | Technical design BEFORE coding: Models, Services, Routes |
-| **Frontend** | `/frontend` | UI implementation with quality checklist (responsive, a11y, dark mode) |
-| **Backend** | `/backend` | Laravel/WP backend by spec: Models, Services, Controllers, Jobs |
-| **QA** | `/qa` | Testing + Security Audit + Bug documentation |
-| **Deploy** | `/deploy` | Go-Live checklist (Laravel & WordPress) |
-| **Help** | `/help` | Show project status and recommended next step |
+| **requirements** | "neues Feature", "spec schreiben" | Write feature specs with User Stories, Acceptance Criteria, Edge Cases |
+| **architecture** | "wie bauen wir das", "Datenmodell" | Technical design BEFORE coding: Models, Services, Routes |
+| **frontend** | "UI bauen", "responsive", "Dark Mode" | UI implementation with quality checklist (responsive, a11y, dark mode) |
+| **backend** | "Service erstellen", "Migration" | Laravel/WP backend by spec: Models, Services, Controllers, Jobs |
+| **qa** | "testen", "ist das sicher" | Testing + Security Audit + Bug documentation |
+| **deploy** | "go live", "deployen" | Go-Live checklist (Laravel & WordPress) |
+| **help** | "wo stehe ich", "was kommt als nächstes" | Show project status and recommended next step |
 
 ### Project Management Skills
 
-| Skill | Command | Purpose |
+| Skill | Trigger in chat | Purpose |
 |---|---|---|
-| **Init Project** | `/init-project` | Bootstrap new projects: detect stack, create structure, check plugins |
-| **Audit Project** | `/audit-project` | Analyze existing projects, score quality (0-100), identify gaps |
+| **init-project** | "neues Projekt", "Setup" | Bootstrap new projects: detect stack, create structure, check plugins |
+| **audit-project** | "Projekt prüfen", "was fehlt hier" | Analyze existing projects, score quality (0-100), identify gaps |
+| **docs-structure** | "Doku anlegen", "wo finde ich was" | Hub-Pattern documentation with code paths and trigger words |
 
 ### Domain Skills (specialized audits)
 
-| Skill | Command | Purpose |
+| Skill | Trigger in chat | Purpose |
 |---|---|---|
-| **Laravel Tests** | `/laravel-tests` | Generate Pest tests by priority (Critical → Useful) |
-| **Security Audit** | `/laravel-security-audit` | OWASP + DSGVO security audit with severity framework |
-| **Performance** | `/laravel-performance` | Performance audit (target: every page < 2 seconds) |
-| **A11y Audit** | `/laravel-a11y` | WCAG 2.1 AA accessibility audit for Blade/Livewire |
-| **SEO** | `/seo` | Classical SEO: robots.txt, sitemap, meta tags, JSON-LD, hreflang |
-| **GEO** | `/geo` | Generative Engine Optimization: ai.txt, llms.txt, AI crawler config |
-| **Docs** | `/laravel-docs` | Generate MkDocs documentation from Laravel codebase |
-| **Portfolio** | `/portfolio-texte` | Write portfolio/case study texts for web projects |
+| **laravel-tests** | "Tests schreiben", "Coverage" | Generate Pest tests by priority (Critical → Useful) |
+| **laravel-security-audit** | "Security Audit", "DSGVO-Check" | OWASP + DSGVO security audit with severity framework |
+| **laravel-performance** | "Performance", "Seite ist langsam" | Performance audit (target: every page < 2 seconds) |
+| **laravel-a11y** | "A11y prüfen", "Barrierefreiheit" | WCAG 2.1 AA accessibility audit for Blade/Livewire |
+| **seo** | "SEO", "robots.txt", "sitemap" | Classical SEO: robots.txt, sitemap, meta tags, JSON-LD, hreflang |
+| **geo** | "GEO", "KI-Auffindbarkeit", "ai.txt" | Generative Engine Optimization: ai.txt, llms.txt, AI crawler config |
+| **laravel-docs** | "Dokumentation erstellen", "MkDocs" | Generate MkDocs documentation from Laravel codebase |
+| **portfolio-texte** | "Portfolio-Text", "Case Study" | Write portfolio/case study texts for web projects |
 
 ### Utility Skills
 
-| Skill | Command | Purpose |
+| Skill | Trigger in chat | Purpose |
 |---|---|---|
-| **Git Commit** | `/git-commit` | Smart git commit with Conventional Commits |
+| **git-commit** | "commit", "push", "Änderungen sichern" | Smart git commit with Conventional Commits |
 
 ### Rules (auto-applied by file path)
 
